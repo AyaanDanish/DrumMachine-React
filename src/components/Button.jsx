@@ -57,7 +57,7 @@ const Button = ({ text, source }) => {
     >
       {text}
       <audio
-        src=`https://github.com/AyaanDanish/DrumMachine-React/raw/main/src/audio/${encodeURI(kit)}/${source}`
+        src={`https://github.com/AyaanDanish/DrumMachine-React/raw/main/src/audio/${encodeURI(kit)}/${source}`}
         itemType="audio/mpeg"
         id={`${text}-sound`}
       ></audio>
