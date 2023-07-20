@@ -2,6 +2,8 @@ import PropTypes from "prop-types";
 import { SettingsContext } from "../App";
 import { useContext } from "react";
 
+import.meta.env.BASE_URL
+
 const drumMapping = {
   Q: "Heater 1",
   W: "Heater 2",
@@ -40,6 +42,7 @@ const Button = ({ text, source }) => {
     else setDisplayPanel(pianoMapping[e.target["id"]]);
 
     const audio = e.target.childNodes[1];
+    audio.src = `${import.meta.env.BASE_URL}src/audio/${kit}/${source}`;
     audio.pause();
     audio.volume = volume / 100;
     audio.currentTime = 0;
@@ -57,7 +60,6 @@ const Button = ({ text, source }) => {
     >
       {text}
       <audio
-        src={`src/audio/${kit}/${source}`}
         itemType="audio/mpeg"
         id={`${text}-sound`}
       ></audio>
