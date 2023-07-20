@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=New+Rocker&display=swap");
+
+
+:root {
+  --theme-red: #8f2306;
+  --theme-yellow: #d7791a;
+  --theme-black: #222321;
+  --theme-blue: #486f6e;
+}
+
+body {
+  background-color: var(--theme-red);
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+label {
+  font-family: "New Rocker", cursive;
+  font-size: 25pt;
+  color: var(--theme-red);
+}
+
+#app-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#title {
+  margin-top: 50px;
+  color: var(--theme-black);
+  font-family: "New Rocker", cursive;
+  font-size: 50pt;
+}
+
+/* The card at the middle */
+#drum-machine {
+  width: 50vw;
+  height: 70vh;
+  background-color: var(--theme-black);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 35px;
+}
+
+#settings-panel {
+  width: 40%;
+  height: 100%;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#button-grid {
+  width: 60%;
+  height: 85%;
+  padding: 20px;
+  min-width: 60%;
+  display: grid;
+  grid-template-areas:
+    "Q W E"
+    "A S D"
+    "Z X C";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px 20px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Individual buttons */
+.drum-pad {
+  height: 100%;
+  width: 100%;
+  font-family: "New Rocker", cursive;
+  font-size: 40pt;
+  color: var(--theme-black);
+  background-color: var(--theme-red);
+  box-shadow: none;
+  border: none;
+  border-radius: 35px;
+}
+
+.drum-pad:active,
+.is-active {
+  transition: color 0.15s, background-color 0.15s, border 0.15s;
+  color: var(--theme-red);
+  background-color: var(--theme-black);
+  border: 4px solid var(--theme-red);
+}
+
+.disabled {
+  opacity: 60%;
+  color: var(--theme-red);
+  background-color: var(--theme-black);
+  border: 4px solid var(--theme-red);
+  transition: color 0.15s, background-color 0.15s, border 0.15s;
+}
+
+#power-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.my-toggle {
+  width: 150px;
+  height: 60px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-black);
+  background-color: var(--theme-red);
+  box-shadow: none;
+  border: 4px solid var(--theme-red);
+  border-radius: 20px;
+  transition: color 0.15s, background-color 0.15s, border 0.15s;
+  font-size: 1.8rem;
+  font-family: "New Rocker", cursive;
+  white-space: nowrap;
+}
+
+.toggled {
+  color: var(--theme-red);
+  background-color: var(--theme-black);
+  border: 4px solid var(--theme-red);
+  border-radius: 20px;
+  transition: color 0.15s, background-color 0.15s, border 0.15s;
+}
+
+.display-panel {
+  width: 200px;
+  height: 75px;
+  background-color: var(--theme-black);
+  color: var(--theme-yellow);
+  border: 4px solid var(--theme-red);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "New Rocker", cursive;
+  font-size: 2rem;
+}
+
+#kit-button {
+  width: 250px;
+}
+
+.volume-panel {
+  width: 200px;
+  height: 75px;
+  background-color: var(--theme-black);
+  border: 4px solid var(--theme-red);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#volume-slider {
+  width: 80%;
+  height: 10px;
+  background-color: var(--theme-red);
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  appearance: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: var(--theme-yellow);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#signature {
+  margin-top: 20px;
+  color: var(--theme-black);
+  font-family: "New Rocker", cursive;
+  font-size: 15pt;
+  margin-left: 40%;
+}
